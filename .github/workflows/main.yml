@@ -23,23 +23,23 @@ jobs:
               echo "Azure resource group created"
             fi
 
-#      - uses: azure/arm-deploy@v1
-#        with:
- #         resourceGroupName: ${{ env.ResourceGroupName }}
- #         template: eventhub.json
-  #        parameters: eventhub.parameters.json
-#
- #     - uses: azure/arm-deploy@v1
- ##       with:
-  #        resourceGroupName: ${{ env.ResourceGroupName }}
- #         template: databricks.json
-   #       parameters: databricks.parameters.json
-#
-  #    - uses: azure/arm-deploy@v1
-   #     with:
-   #       resourceGroupName: ${{ env.ResourceGroupName }}
-   #       template: sql.json
-   #       parameters: sql.parameters.json
+      - uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: ${{ env.ResourceGroupName }}
+          template: eventhub.json
+          parameters: eventhub.parameters.json
+
+      - uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: ${{ env.ResourceGroupName }}
+          template: databricks.json
+          parameters: databricks.parameters.json
+
+      - uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: ${{ env.ResourceGroupName }}
+          template: sql.json
+          parameters: sql.parameters.json
 
       - uses: azure/arm-deploy@v1
         with:
