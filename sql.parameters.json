@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serverName": {
-      "value": "sqldb2509"
+      "value": "sqldb250998"
     },
     "administratorLogin": {
-      "value": "tanmay2509"
+      "value": "tanmay250998"
     },
     "administratorLoginPassword": {
       "value": "ubonbz25?!"
