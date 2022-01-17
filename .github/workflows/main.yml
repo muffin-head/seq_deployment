@@ -1,17 +1,17 @@
 on: [push]
-name: databrideployment
+name: synapse
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: seq_deployment-rg
+      ResourceGroupName: seq
       ResourceGroupLocation: "eastus"
     steps:
       - uses: actions/checkout@master
       - uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.NEW_CRED }}
       - uses: Azure/CLI@v1
         with:
           inlineScript: |
