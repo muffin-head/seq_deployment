@@ -1,11 +1,11 @@
 on: [push]
-name: databrideployment
+name: synapse
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: seq_deployment-rg
+      ResourceGroupName: seq
       ResourceGroupLocation: "eastus"
     steps:
       - uses: actions/checkout@master
@@ -23,22 +23,22 @@ jobs:
               echo "Azure resource group created"
             fi
 
-      - uses: azure/arm-deploy@v1
-        with:
-         resourceGroupName: ${{ env.ResourceGroupName }}
-         template: eventhub.json
-         parameters: eventhub.parameters.json
-
-      - uses: azure/arm-deploy@v1
-        with:
-          resourceGroupName: ${{ env.ResourceGroupName }}
-          template: databricks.json
-          parameters: databricks.parameters.json
-      - uses: azure/arm-deploy@v1
-        with:
-          resourceGroupName: ${{ env.ResourceGroupName }}
-          template: sql.json
-          parameters: sql.parameters.json
+     # - uses: azure/arm-deploy@v1
+    #    with:
+   #      resourceGroupName: ${{ env.ResourceGroupName }}
+  #       template: eventhub.json
+ #        parameters: eventhub.parameters.json
+#
+   #   - uses: azure/arm-deploy@v1
+  #      with:
+ #       #  resourceGroupName: ${{ env.ResourceGroupName }}
+       #   template: databricks.json
+      #    parameters: databricks.parameters.json
+     # - uses: azure/arm-deploy@v1
+    #    with:
+   #       resourceGroupName: ${{ env.ResourceGroupName }}
+  #        template: sql.json
+ #         parameters: sql.parameters.json
 
       - uses: azure/arm-deploy@v1
         with:
